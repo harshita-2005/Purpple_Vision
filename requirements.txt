@@ -1,0 +1,44 @@
+# =============================================================================
+# Store Intelligence — Runtime Dependencies (Python 3.11)
+# Pinned for hackathon stability. Re-pin after intentional upgrades.
+#
+# Install:  pip install -r requirements.txt
+# Dev extras: pip install -r requirements-dev.txt
+# =============================================================================
+
+# --- Web API ---
+fastapi==0.115.6          # REST API framework (app/, tests TestClient)
+uvicorn[standard]==0.34.0 # ASGI server (Docker CMD, local uvicorn)
+pydantic==2.10.4          # Event/POS schemas and API contracts (app/models.py)
+
+# --- Database ---
+sqlalchemy==2.0.36        # SQLite ORM (app/db.py)
+
+# --- HTTP client ---
+httpx==0.28.1             # Streamlit dashboard → FastAPI; bridge scripts
+
+# --- Environment ---
+python-dotenv==1.0.1      # .env loading (seed, bridge, config scripts)
+
+# --- Computer vision & detection ---
+opencv-python-headless==4.10.0.84  # cv2 in pipeline (zones, dwell, entry_exit, queue)
+ultralytics==8.3.63                # YOLO11m inference (pipeline/detect.py, queue.py)
+supervision==0.28.0                # ByteTrack + Detections (pipeline trackers/zones)
+numpy==1.26.4                      # Array ops in pipeline geometry/overlap
+pillow==11.1.0                     # Image stack (ultralytics transitive; explicit pin for 3.11)
+lapx==0.5.11                       # ByteTrack assignment (Windows-compatible lap)
+
+# Transitive via ultralytics (not pinned): torch, torchvision, scipy, matplotlib, pyyaml, etc.
+
+# --- CAM3 Re-ID (store_2 / Footage2; optional) ---
+# pip install -r requirements-reid.txt
+
+# --- Data processing ---
+pandas==2.2.3             # POS CSV aggregation (pos_loader); Streamlit charts
+
+# --- Dashboard ---
+streamlit==1.41.1         # dashboard/streamlit_app.py
+plotly==5.24.1            # dashboard charts (Sankey, zones, gauges)
+# --- Testing (evaluator / CI; included in main for one-command setup) ---
+pytest==8.3.4
+pytest-cov==6.0.0

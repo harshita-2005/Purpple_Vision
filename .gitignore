@@ -1,0 +1,112 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE / Cursor
+.cursor/
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# Logs (runtime *.log files)
+*.log
+
+# Database (demo SQLite under data/databases/ is committed for judges)
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+!data/
+!data/databases/
+!data/databases/*.db
+
+# Legacy demo outputs (superseded by pipeline_demo_store_1 / pipeline_demo_store_2)
+data/outputs/pipeline/pipeline_demo/
+data/outputs/pipeline/pipeline_demo_report.txt
+
+# Pipeline tracking videos (large — regenerate locally; do not push to GitHub)
+data/outputs/pipeline/**/*.mp4
+
+# Dataset files (challenge data — do not commit)
+data/clips/
+data/cctv/
+data/generated/
+data/*.json
+data/*.jsonl
+data/*.csv
+!data/.gitkeep
+!data/clips/.gitkeep
+
+# Model weights (YOLO and other CV models)
+*.pt
+*.pth
+*.onnx
+*.weights
+weights/
+models/
+runs/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Alembic (keep versions tracked; ignore local overrides if any)
+# alembic/versions/ is tracked
+
+# Temporary files
+tmp/
+temp/
+*.tmp
